@@ -257,12 +257,12 @@ private:
                     // Ensure main display is at index 0
                     sDisplayInfo->insert(sDisplayInfo->begin()
                                          , DisplayInfo(display
-                                                       , string(displayName.UTF8String)
+                                                       , displayName ? string(displayName.UTF8String) : "Main display"
                                                        , displayModes));
                 }
                 else {
                     sDisplayInfo->emplace_back( display
-                                                , string(displayName.UTF8String)
+                                                , displayName ? string(displayName.UTF8String) : "External display"
                                                 , displayModes);
                 }
             }
